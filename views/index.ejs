@@ -2,6 +2,8 @@
 <html>
     <head>
         <% include partials/template/head.ejs %>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     </head>
 
     <body class="<%= page %>">
@@ -12,10 +14,12 @@
             <% include partials/template/loginLinks.ejs %>
             <% include partials/template/headEnding.ejs %>
 
+            <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
 
 
 
-          <section class="layout">
+
+            <section class="layout">
             <div class="primary">
               <% include partials/content/head-info.ejs %>
             </div><!-- primary section -->

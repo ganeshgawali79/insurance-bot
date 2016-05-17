@@ -1,11 +1,11 @@
 {
   "_id": "47e13f57ecfb9c28d46dd750212507f9",
-  "_rev": "9-19f7668d833b8bf8475ad874507eed3d",
+  "_rev": "15-6827bb5466a4bb730f49b15449eb4577",
   "payer_id": "AF456J23",
   "payer_name": "Tom Murphy",
   "first_name": "Tom",
   "last_name": "Murphy",
-  "dob": "1986-09-01",
+  "dob": "20-08-1986",
   "gender": "M",
   "active": true,
   "registered_email": "tommurphy2015@gmail.com ",
@@ -14,11 +14,12 @@
   "created_at": "2014-05-12 - 03:15:10 ",
   "policy_renewal_date": "2017-05-11",
   "address": {
-    "street_line_1": "3500 WALNUT ST",
-    "street_line_2": "",
-    "state": "CA",
-    "zip": "94105",
-    "city": "SAN FRANCISCO"
+    "street_line_1": "Damastown Industrial Park,",
+    "street_line_2": "Mulhuddart",
+    "state": "",
+    "zip": "Dublin 15",
+    "city": "Dublin",
+    "country": "Ireland"
   },
   "plan_type": {
     "HealthI": "Health Insurance",
@@ -26,11 +27,11 @@
     "HomeI": "Home Insurance"
   },
   "HealthI": {
-    "plan_id": "HL657675799",
-    "active": true,
+    "plan_id": "AF456J23HC",
     "period_in_months": 30,
     "created_date": "2016-05-12",
     "renewal_date": "2046-05-11",
+    "active": true,
     "eligibility": [
       {
         "glasses": "glasses",
@@ -106,16 +107,5 @@
         "mortgage_description": "You can add protection for your monthly mortgage payment on your insured Private House."
       }
     ]
-
   }
 }
-
-
-
-
-
-
-
-
-
-

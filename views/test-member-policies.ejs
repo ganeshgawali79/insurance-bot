@@ -9,8 +9,9 @@
 <div class="container">
   <div class="outline">
     <% include partials/template/header.ejs %>
+      <% include partials/template/loginLinks.ejs %>
+      <% include partials/template/headEnding.ejs %>
 
-    <% include partials/template/headEnding.ejs %>
 
     <section class="layout">
       <div class="primary">
@@ -19,7 +20,7 @@
 
         <div class="welcomeText">
 
-          Hi <%= memberData.first_name %>, <span id="MemberName"></span>Welcome to CloudCo Insurance
+          Hi <%= memberData.Full_Name %>, <span id="MemberName"></span>Welcome to CloudCo Insurance
 
         </div>
 
@@ -32,18 +33,13 @@
               <div class="userTypeHeading">USER ACCOUNT</div>
 
               <ul>
-                <li>Account Reference: <span><%= memberData.payer_id %></span></li>
-                <li>Full Name: <span><%= memberData.payer_name %></span></li>
-                <li>Date Of Birth: <span><%= memberData.dob %></span></li>
-                <li>Gender: <span><%= memberData.gender %></span></li>
-                <li>Email: <span><%= memberData.registered_email %></span></li>
-                <li>Mobile Number: <span><%= memberData.registered_mobile %></span></li>
-                <li class="address">Address: <span>
-                    <%= memberData.address.street_line_1 %><br>
-                    <%= memberData.address.street_line_2 %><br>
-                    <%= memberData.address.zip %>,<br>
-                    <%= memberData.address.country %>
-                  </span></li>
+
+                  <li>Full Name: <span><%= memberData.Full_Name %></span></li>
+                  <li>Email: <span><%= memberData.email_id %></span></li>
+                  <li>Password: <span><%= memberData.password %></span></li>
+
+
+
                 <li class="edit_account_details"><a href="#">Edit User Account</a></li>
 
               </ul>
@@ -96,6 +92,7 @@
 </div>
 
 <% include partials/template/footer.ejs %>
+<% include partials/template/jsdefaults.ejs %>
 <% include partials/template/analytics.ejs %>
 
 </body>
