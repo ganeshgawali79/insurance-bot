@@ -246,8 +246,10 @@ module.exports = function(app, passport) {
         // LOGIN ===============================
         // show the login form
         app.get('/login', function(req, res) {
-            res.render('login', {
-                //message: req.flash('loginMessage')
+            res.render('login',{
+                title: 'Login',
+                page: 'login',
+                message: req.flash('loginMessage')
             });
         });
 
@@ -261,7 +263,12 @@ module.exports = function(app, passport) {
         // SIGNUP =================================
         // show the signup form
         app.get('/signup', function(req, res) {
-            res.render('signup');
+            res.render('signup',{
+                title: 'Signup',
+                page: 'signup',
+                message: req.flash('loginMessage')
+            });
+
         });
 
         // process the signup form
@@ -279,7 +286,9 @@ module.exports = function(app, passport) {
     // locally --------------------------------
         app.get('/connect/local', function(req, res) {
             res.render('connect-local.ejs', {
-                //message: req.flash('loginMessage')
+                title: 'Login',
+                page: 'login',
+                message: req.flash('loginMessage')
             });
         });
         app.post('/connect/local', passport.authenticate('local-signup', {

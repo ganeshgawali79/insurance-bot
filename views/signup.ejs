@@ -18,10 +18,12 @@
 
                 <div class="welcome">
 
-                    <div class="col-sm-6 col-sm-offset-3">
 
                         <h1><span class="fa fa-sign-in"></span> Signup</h1>
 
+                        <% if (message.length > 0) { %>
+                        <div class="alert alert-danger"><%= message %></div>
+                        <% } %>
 
                         <!-- LOGIN FORM -->
                         <form action="/signup" method="post">
@@ -51,7 +53,6 @@
                         <p>Or go <a href="/">home</a>.</p>
 
 
-                    </div>
 
                 </div>
 

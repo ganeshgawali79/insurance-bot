@@ -8,25 +8,30 @@
   "dependencies": {
     "cfenv": "1.0.x",
     "cloudant": "^1.4.1",
-    "express" : "*",
     "ejs": "~2.3.3",
-    "body-parser": "*",
     "dotenv":   "*",
     "async": "^1.5.0",
     "nano": "*",
-    "bcrypt-nodejs" : "*",
+    "ports":            "1.1.x",
+    "underscore":       "1.6.x",
+
+    "express" : "~4.0.0",
+    "mongoose" : "~3.8.1",
     "passport" : "~0.1.17",
     "passport-local" : "~0.1.6",
     "passport-facebook" : "~1.0.2",
     "passport-twitter" : "~1.0.2",
     "passport-google-oauth" : "~0.1.5",
     "connect-flash" : "~0.1.1",
+
+    "bcrypt-nodejs" : "latest",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.0",
     "method-override": "~1.0.0",
-    "express-session": "~1.0.0",
-    "ports":            "1.1.x",
-    "underscore":       "1.6.x",
-    "morgan": "~1.0.0"
+    "express-session": "~1.0.0"
+
+
   },
   "repository": {},
   "engines": {
