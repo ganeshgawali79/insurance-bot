@@ -24,6 +24,9 @@ var http = require('http');
 
 var manager = require('./account');
 
+// requiring passport
+require('./config/passport')(passport);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -48,6 +51,7 @@ app.listen(appEnv.port, '0.0.0.0', function () {
         });
     });
 
+    // add the login functionaility
     app.get("/login", function (req, res) {
         res.render('login', {
           title: 'Cloud Insurance Co - About',
@@ -55,6 +59,14 @@ app.listen(appEnv.port, '0.0.0.0', function () {
         });
     });
 
+    // process the login form
+    app.post('/login', passport.authenticate('local-login', {
+      successRedirect : '/profile', // redirect to the secure profile section
+      failureRedirect : '/login', // redirect back to the signup page if there is an error
+      failureFlash : true // allow flash messages
+    }));
+
+    // process the about page
     app.get("/about", function (req, res) {
         res.render('about', {
             title: 'Cloud Insurance Co - About',
