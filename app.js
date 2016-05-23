@@ -48,6 +48,13 @@ app.listen(appEnv.port, '0.0.0.0', function () {
         });
     });
 
+    app.get("/login", function (req, res) {
+        res.render('login', {
+          title: 'Cloud Insurance Co - About',
+          page: 'loginPage',
+        });
+    });
+
     app.get("/about", function (req, res) {
         res.render('about', {
             title: 'Cloud Insurance Co - About',
