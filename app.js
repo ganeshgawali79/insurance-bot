@@ -191,9 +191,9 @@ app.listen(appEnv.port, '0.0.0.0', function () {
 
     //----------------------------------------------------------------------------------
     // Cloudant connections
-    //----------------------------------------------------------------------------------    
+    //----------------------------------------------------------------------------------
 
-    //Added for Json Readability    
+    //Added for Json Readability
     app.set('json spaces', 6);
 
     //Cloudant Initialization code
@@ -218,14 +218,14 @@ app.listen(appEnv.port, '0.0.0.0', function () {
             password: password
         });
     }
-    /*  var username = process.env.cloudant_username;
+      var username = process.env.cloudant_username;
       var password = process.env.cloudant_password;
 
       // Initialize the library with CloudCo account.
       var cloudant = Cloudant({
           account: username,
           password: password
-      });*/
+      });
 
     cloudant.db.create("insurance", function (err, res) {
         if (err) {

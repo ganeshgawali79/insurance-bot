@@ -34,12 +34,13 @@
 
  window.fbAsyncInit = function () {
      FB.init({
-         appId: '1793919404162980',
+         /* appId: '1793919404162980', */
+         appId: '1776407919263413',
          xfbml: true,
          version: 'v2.6'
      });
 
-     // Now that we've initialized the JavaScript SDK, we call 
+     // Now that we've initialized the JavaScript SDK, we call
      // FB.getLoginStatus().  This function gets the state of the
      // person visiting this page and can return one of three states to
      // the callback you provide.  They can be:
