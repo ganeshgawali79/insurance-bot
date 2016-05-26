@@ -39,7 +39,7 @@
          version: 'v2.6'
      });
 
-     // Now that we've initialized the JavaScript SDK, we call 
+     // Now that we've initialized the JavaScript SDK, we call
      // FB.getLoginStatus().  This function gets the state of the
      // person visiting this page and can return one of three states to
      // the callback you provide.  They can be:
@@ -95,3 +95,18 @@
          xmlhttp.send();
      });
  }
+
+ // Adding authentication using passportJS
+ // to allow for people using the app but prefering
+ // options other than Facebook
+
+ passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
+  }
+));
