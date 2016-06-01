@@ -24,7 +24,9 @@ var http = require('http');
 
 // passport integration
 var passport = require('passport-local')
-require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // passport for configuration
+
+var strategy = require('./setup-passport');
 
 //bodyparser for POST requests.
 var bodyParser = require('body-parser');
@@ -41,14 +43,24 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // required for passport
-app.use(session({ secret: 'secret123' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+// app.use(session({ secret: 'secret123' })); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
+// app.use(flash()); // use connect-flash for flash messages stored in session
+
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 require('./app/routes.js')(app, passport);
 
 // serve the files out of ./public as our main files
 app.use(express.static(path.join(__dirname, 'public')));
+
+// use statements for passport
+app.use(cookieParser());
+// See express session docs for information on the options: https://github.com/expressjs/session
+app.use(session({ secret: 'YOUR_SECRET_HERE', resave: false,  saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();

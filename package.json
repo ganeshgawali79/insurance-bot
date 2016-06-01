@@ -6,13 +6,16 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "body-parser": "~1.13.2",
     "cfenv": "1.0.x",
     "cloudant": "^1.4.1",
-    "express": "4.13.x",
-    "ejs": "~2.3.3",
-    "body-parser": "~1.13.2",
     "dotenv": "*",
+    "ejs": "~2.3.3",
+    "express": "4.13.x",
+    "express-session": "^1.13.0",
     "log4js": "~0.6.36",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.5.1",
     "passport-local": "*"
   },
   "repository": {},
