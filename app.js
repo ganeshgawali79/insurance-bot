@@ -22,12 +22,46 @@ var logger = log4js.getLogger('application');
 var app = express();
 var http = require('http');
 
+// setup for passport local auth
+var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+
+// setup for Cloudant locally
+require('dotenv').load();
+
+// Load the Cloudant library.
+var Cloudant = require('cloudant');
+
+ var username = process.env.cloudant_username;
+ var password = process.env.cloudant_password;
+
+ // Initialize the library
+ var cloudant = Cloudant({
+     account: username,
+     password: password
+ });
+
 //bodyparser for POST requests.
 var bodyParser = require('body-parser');
-// parse application/x-www-form-urlencoded 
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
- 
-// parse application/json 
+
+// parse application/json
 app.use(bodyParser.json());
 
 var manager = require('./account');
@@ -293,8 +327,21 @@ app.listen(appEnv.port, '0.0.0.0', function () {
 
         });
     });
-    
-        //-------------------------------------------------------------------
+
+    //----------------------
+    //   Passport Ops
+    //---------------------
+
+    app.post('/login',
+      passport.authenticate('local'),
+      function(req, res) {
+        // If this function gets called, authentication was successful.
+        // `req.user` contains the authenticated user.
+      res.redirect('/index');
+  });
+
+
+    //-------------------------------------------------------------------
     // CRUD operations
     //-------------------------------------------------------------------
 
@@ -340,7 +387,7 @@ app.listen(appEnv.port, '0.0.0.0', function () {
     //GET call to read a document.
     app.get("/api/readdoc", readDocument);
 
-    //update a doc 
+    //update a doc
     function updateDocument(req, res) {
         var db = cloudant.db.use(req.body.db);
         var cloudantResponse = this;
