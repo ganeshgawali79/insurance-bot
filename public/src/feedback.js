@@ -1,30 +1,4 @@
-/**
- *
- * Bootstrap one-page template with Parallax effect | Script Tutorials
- * http://www.script-tutorials.com/bootstrap-one-page-template-with-parallax-effect/
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2014, Script Tutorials
- * http://www.script-tutorials.com/
- */
-
 $(document).ready(function (){
-
-  $("#linux32-downloads-stable a").click(function(event) {
-    if(ga) {
-      var os = $(event.currentTarget).attr("data-os").toString()
-      ga('send', 'event', 'Download', os );
-    }
-  });
-
-  $("#downloads a").click(function(event) {
-    if(ga) {
-      var os = $(event.currentTarget).attr("id").toString()
-      ga('send', 'event', 'Download', os );
-    }
-  });
 
   $('.awesome-tooltip').tooltip({
         placement: 'left'

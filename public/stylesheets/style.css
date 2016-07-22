@@ -304,6 +304,11 @@
         font-weight: bold;
     }
 
+    .menuLink_on {
+        color: #12aaeb;
+        border-bottom: 2px solid #12aaeb;
+    }
+
     .tiles {
         display: flex;
         flex-direction: row;
@@ -1032,6 +1037,62 @@
         justify-content: center;
         align-items: center;
         border-bottom: 2px solid #e7f6fd;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-control {
+        display: block;
+        width: 75%;
+        height: 35px;
+        padding: 6px 15px;
+        font-size: 14px;
+        line-height: 1.57142857;
+        color: #76838f;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #e4eaec;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    textarea.form-control {
+        height: auto;
+    }
+
+    .btn {
+        padding: 6px 15px;
+        font-size: 14px;
+        line-height: 1.57142857;
+        border-radius: 3px;
+        -webkit-transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+        -o-transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+        transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+    #submitButton {
+        color: #fff;
+        background-color: #62a8ea;
+        border: 0px;
+    }
+    #submitButton:hover {
+        background-color: #8db8e0;
+        border: 0px;
+
+    }
+    .btn-default {
+        color: #d8e0e6;
+        background-color: #8b8b8b;
+        border: 0px;
+
+    }
+
+    .btn-default:hover {
+        background-color: #e2e2e2;
+        color: #8b8b8b;
     }
 
     @media only screen and (max-width: 800px) {
