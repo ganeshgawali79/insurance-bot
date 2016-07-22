@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/IBM-Bluemix/insurance-bot.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/insurance-bot)
+[![Build Status](https://travis-ci.org/IBM-Bluemix/insurance-bot.svg?branch=dev)](https://travis-ci.org/IBM-Bluemix/insurance-bot)
 
 # Insurance Policy Bot Overview
 
 [![Policy Bot](./design/video-cap.png)](https://vimeo.com/165460548 "Policy Bot Concept - Click to Watch!")
 
-**THIS APP IS A WORK IN PROGRESS**
+Running on: [http://dev-cloudco.mybluemix.net/](http://dev-cloudco.mybluemix.net/)
 
 ## Note:
 Login is in progress,
@@ -20,7 +20,7 @@ Coming Soon!
 <Create sub-sections to break down larger sequences of steps. General rule of thumb is that you should not have more than 9 steps in each task. Include sanity checks, or ways for the developer to confirm what they have done so far is correct, every 20 steps. Also, avoid directly referencing the Bluemix UI components so that ACE changes don't invalidate your README.>
 
 ## Run the app locally
-In order to run the app locally you must add your cloudant credentials to the app.js file in lines 86 to 88. 
+In order to run the app locally you must add your cloudant credentials to the app.js file in lines 86 to 88.
 
 
 ## API documentation
